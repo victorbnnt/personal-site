@@ -29,3 +29,53 @@ spec:
   - port: 80
   selector:
     app: personal-website
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curriculum-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: curriculum
+  template:
+    metadata:
+      labels:
+        app: curriculum
+    spec:
+      containers:
+      - name: curriculum-pod
+        image: victorbnnt/personal:landing_page
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-personal
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: curriculum
+            port:
+              number: 80
+        path: /cv
+        pathType: Prefix
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: curriculum
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: curriculum
