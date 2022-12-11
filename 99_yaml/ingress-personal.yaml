@@ -25,6 +25,13 @@ spec:
             name: bluejay
             port:
               number: 80
+      - path: /articles(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: articles
+            port:
+              number: 80
       - path: /(.*)
         pathType: Prefix
         backend:
