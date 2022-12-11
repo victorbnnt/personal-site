@@ -15,12 +15,14 @@ spec:
       containers:
       - name: bluejay
         image: victorbnnt/personal:bluejay
-        imagePullPolicy: Always
+        #imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
         - name: TITLE
           value: "Blue Jay"
+        - name: DASH_REQUESTS_PATHNAME_PREFIX
+          value: /bluejay/
 ---
 apiVersion: v1
 kind: Service
@@ -30,5 +32,6 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
+    targetPort: 8080
   selector:
     app: bluejay
