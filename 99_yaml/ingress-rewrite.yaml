@@ -1,17 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: raininaustralia
+  name: rewrite
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      rewrite ^(/ria)$ $1/ redirect;
+      rewrite ^(/articles)$ $1/ redirect;
+      rewrite ^(/rain-in-australia)$ $1/ redirect;
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /ria(/|$)(.*)
+      - path: /articles(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: articles
+            port:
+              number: 80
+      - path: /rain-in-australia(/|$)(.*)
         pathType: Prefix
         backend:
           service:
