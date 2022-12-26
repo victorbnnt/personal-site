@@ -1,6 +1,7 @@
 .htaccess
 .htpasswd
 .passwd
+.DS_Store
 06_rain_in_australia/api-dir/api/__pycache__
 06_rain_in_australia/api-dir/RainInAustralia/__pycache__
 06_rain_in_australia/notebooks
