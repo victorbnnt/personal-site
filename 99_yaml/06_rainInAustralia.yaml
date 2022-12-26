@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: raininaustralia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raininaustralia
+  template:
+    metadata:
+      labels:
+        app: raininaustralia
+    spec:
+      containers:
+      - name: raininaustraliaapi
+        image: victorbnnt/personal:raininaustraliaapi
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      - name: frontend
+        image: victorbnnt/personal:raininaustraliafrontend
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8501
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: raininaustralia
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8501
+  selector:
+    app: raininaustralia

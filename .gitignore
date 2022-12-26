@@ -1,3 +1,6 @@
 .htaccess
 .htpasswd
 .passwd
+06_rain_in_australia/api-dir/api/__pycache__
+06_rain_in_australia/notebooks
+06_rain_in_australia/mlruns

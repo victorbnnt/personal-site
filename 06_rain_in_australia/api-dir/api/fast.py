@@ -4,7 +4,7 @@ from RainInAustralia.load import get_model
 import os
 import pandas as pd
 
-app = FastAPI()
+app = FastAPI(docs_url="/docs")
 
 app.add_middleware(
     CORSMiddleware,
