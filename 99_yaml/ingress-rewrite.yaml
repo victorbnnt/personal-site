@@ -34,3 +34,10 @@ spec:
             name: titanic
             port:
               number: 80
+      #- path: /(.*)
+      #  pathType: Prefix
+      #  backend:
+      #    service:
+      #      name: landing-page
+      #      port:
+      #        number: 80
