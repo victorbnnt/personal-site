@@ -7,3 +7,5 @@ old-*
 06_rain_in_australia/api-dir/RainInAustralia/__pycache__
 06_rain_in_australia/notebooks
 06_rain_in_australia/mlruns
+__pycache__/
+__pycache__
