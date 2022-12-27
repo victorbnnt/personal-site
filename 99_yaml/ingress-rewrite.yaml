@@ -7,6 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/configuration-snippet: |
       rewrite ^(/articles)$ $1/ redirect;
       rewrite ^(/rain-in-australia)$ $1/ redirect;
+      rewrite ^(/titanic)$ $1/ redirect;
 spec:
   ingressClassName: nginx
   rules:
@@ -24,5 +25,12 @@ spec:
         backend:
           service:
             name: raininaustralia
+            port:
+              number: 80
+      - path: /titanic(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: titanic
             port:
               number: 80
