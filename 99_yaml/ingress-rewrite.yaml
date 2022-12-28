@@ -2,16 +2,27 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: rewrite
+  namespace: ingress-nginx
+  labels:
+    webapp: moqku.co
   annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/configuration-snippet: |
       rewrite ^(/articles)$ $1/ redirect;
       rewrite ^(/rain-in-australia)$ $1/ redirect;
       rewrite ^(/titanic)$ $1/ redirect;
 spec:
-  ingressClassName: nginx
+  tls:
+  - hosts:
+    - moqku.co
+    - www.moqku.co
+    secretName: tls-secret
   rules:
-  - http:
+  - host: moqku.co
+    http:
       paths:
       - path: /articles(/|$)(.*)
         pathType: Prefix
@@ -34,10 +45,27 @@ spec:
             name: titanic
             port:
               number: 80
-      #- path: /(.*)
-      #  pathType: Prefix
-      #  backend:
-      #    service:
-      #      name: landing-page
-      #      port:
-      #        number: 80
+  - host: www.moqku.co
+    http:
+      paths:
+      - path: /articles(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: articles
+            port:
+              number: 80
+      - path: /rain-in-australia(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: raininaustralia
+            port:
+              number: 80
+      - path: /titanic(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: titanic
+            port:
+              number: 80

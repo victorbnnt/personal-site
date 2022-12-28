@@ -2,14 +2,41 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: personal
+  namespace: ingress-nginx
+  labels:
+    webapp: moqku.co
   annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-  ingressClassName: nginx
+  tls:
+  - hosts:
+    - moqku.co
+    - www.moqku.co
+    secretName: tls-secret
   rules:
-  - http:
+  - host: moqku.co
+    http:
+      paths:
+      - path: /curriculum(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: curriculum
+            port:
+              number: 80
+      - path: /bluejay(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: bluejay
+            port:
+              number: 80
+  - host: www.moqku.co
+    http:
       paths:
       - path: /curriculum(/|$)(.*)
         pathType: Prefix
