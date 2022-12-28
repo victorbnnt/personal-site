@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      rewrite ^(/articles)$ $1/ redirect;
+      rewrite ^(/hp)$ $1/ redirect;
       rewrite ^(/rain-in-australia)$ $1/ redirect;
       rewrite ^(/titanic)$ $1/ redirect;
 spec:
@@ -24,11 +24,11 @@ spec:
   - host: moqku.co
     http:
       paths:
-      - path: /articles(/|$)(.*)
+      - path: /hp(/|$)(.*)
         pathType: Prefix
         backend:
           service:
-            name: articles
+            name: homepage
             port:
               number: 80
       - path: /rain-in-australia(/|$)(.*)
@@ -48,11 +48,11 @@ spec:
   - host: www.moqku.co
     http:
       paths:
-      - path: /articles(/|$)(.*)
+      - path: /hp(/|$)(.*)
         pathType: Prefix
         backend:
           service:
-            name: articles
+            name: homepage
             port:
               number: 80
       - path: /rain-in-australia(/|$)(.*)

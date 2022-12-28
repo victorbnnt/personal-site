@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: articles
+  name: homepage
   namespace: ingress-nginx
   labels:
     webapp: moqku.co
@@ -9,27 +9,27 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: articles
+      app: homepage
   template:
     metadata:
       labels:
-        app: articles
+        app: homepage
         webapp: moqku.co
     spec:
       containers:
-      - name: articles
-        image: victorbnnt/personal:articles
+      - name: homepage
+        image: victorbnnt/personal:homepage
         imagePullPolicy: Always
         ports:
         - containerPort: 80
         env:
         - name: TITLE
-          value: "Articles"
+          value: "Homepage"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: articles
+  name: homepage
   namespace: ingress-nginx
   labels:
     webapp: moqku.co
@@ -38,4 +38,4 @@ spec:
   ports:
   - port: 80
   selector:
-    app: articles
+    app: homepage

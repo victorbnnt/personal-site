@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-nginx
+  template:
+    metadata:
+      labels:
+        app: test-nginx
+    spec:
+      containers:
+      - name: test-nginx
+        image: victorbnnt/personal:testnginx
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: TITLE
+          value: "TEST NGINX"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-nginx
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: test-nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: test-nginx
+            port:
+              number: 80
