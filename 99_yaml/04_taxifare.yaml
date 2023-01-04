@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taxifare
+  namespace: ingress-nginx
+  labels:
+    webapp: moqku.co
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taxifare
+  template:
+    metadata:
+      labels:
+        app: taxifare
+        webapp: moqku.co
+    spec:
+      containers:
+      - name: taxifareapi
+        image: victorbnnt/personal:taxifareapi
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
