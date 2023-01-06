@@ -35,13 +35,6 @@ spec:
             name: bluejay
             port:
               number: 80
-      - path: /brubru(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: taxifare
-            port:
-              number: 80
   - host: www.moqku.co
     http:
       paths:

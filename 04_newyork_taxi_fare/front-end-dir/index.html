@@ -6,7 +6,8 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -17,39 +18,10 @@ body { margin: 0; padding: 0; }
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
 <div id="map"></div>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="./script.js"></script>
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoidmljdG9yYm5udCIsImEiOiJja29mams1Zm8wNmV5Mm9wbGtnZ21ybjVmIn0.xMyi36ZqeCDl4IKTQpIlCA';
-const map = new mapboxgl.Map({
-container: 'map',
-// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/streets-v12',
-center: [-74.00597, 40.71427],
-zoom: 12
-});
-
-
-new_direction = new MapboxDirections({
-accessToken: mapboxgl.accessToken,
-profile: 'mapbox/driving',
-controls: {profileSwitcher: false, instructions: false}
-})
-
-
-map.addControl(new_direction, 'top-left');
-
-
-const initFlatpickr = () => {
-  flatpickr("#pickup_datetime", {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i:S",
-    defaultDate: Date.now()
-  });
-};
-
 
 window.addEventListener('load', (event) => {
-
-    const taxiFareApiUrl = 'http://localhost:81/';
 
     initFlatpickr();
 
@@ -92,6 +64,9 @@ window.addEventListener('load', (event) => {
             const fare = Math.round(data['FarePrediction'] * 100) / 100
             fareResult.innerText = `$${fare}`;
           })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
     }
 
 
@@ -129,7 +104,7 @@ window.addEventListener('load', (event) => {
         </form>
         <button id="get-fare-button">Get fare</button>
       </div>
-      <div id="fare">
+      <div id="fare" class='d-none'>
         <p id="predicted-fare"></p>
       </div>
 </body>

@@ -39,6 +39,11 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
+    targetPort: 80
+    name: svc-frontend
+  - port: 81
     targetPort: 81
+    name: svc-api
   selector:
     app: taxifare
+

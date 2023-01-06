@@ -1,6 +1,5 @@
 # imports
 import argparse
-# import pandas as pd
 import subprocess
 from termcolor import colored
 from NYCTaxiFare.data import get_data, clean_data
@@ -18,11 +17,6 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import cross_validate
 from sklearn.metrics import make_scorer
 from sklearn.impute import SimpleImputer
-
-# mlflow
-from memoized_property import memoized_property
-from mlflow.tracking import MlflowClient
-import mlflow
 
 # joblib
 import joblib
@@ -97,11 +91,6 @@ class Trainer():
         print("Baseline " + type(self.params["model"]).__name__ + " model rmse: " +
               str(self.baseline_rmse))
 
-        # ### MLFLOW RECORDS
-        self.mlflow_log_metric("Baseline rmse", self.baseline_rmse)
-        self.mlflow_log_param("Model", type(self.params["model"]).__name__)
-
-
     def run(self):
         """ looking for best parameters for the model and training """
 
@@ -121,37 +110,6 @@ class Trainer():
         for k, v in self.model.best_params_.items():
             print(k, colored(v, "green"))
         print("####################################\n")
-
-        # ### MLFLOW RECORDS
-        self.mlflow_log_metric("Optimized rmsle", self.optimized_rmse)
-        for k, v in self.model.best_params_.items():
-            self.mlflow_log_param(k, v)
-
-
-
-    @memoized_property
-    def mlflow_client(self):
-        mlflow.set_tracking_uri(CUSTOMURI)
-        return MlflowClient()
-
-    @memoized_property
-    def mlflow_experiment_id(self):
-        try:
-            return self.mlflow_client.create_experiment(self.experiment_name)
-        except BaseException:
-            return self.mlflow_client.get_experiment_by_name(self.experiment_name).experiment_id
-
-    @memoized_property
-    def mlflow_run(self):
-        return self.mlflow_client.create_run(self.mlflow_experiment_id)
-
-    def mlflow_log_param(self, key, value):
-        self.mlflow_client.log_param(self.mlflow_run.info.run_id, key, value)
-
-    def mlflow_log_metric(self, key, value):
-        self.mlflow_client.log_metric(self.mlflow_run.info.run_id, key, value)
-
-
 
     def save_model(self, model_name):
         """ Save the model into a .joblib format """

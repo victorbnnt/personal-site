@@ -10,4 +10,4 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install -e .
 
-CMD uvicorn api.fast:app --host 0.0.0.0 --port 80
+CMD uvicorn api.fast:app --host 0.0.0.0 --port 81

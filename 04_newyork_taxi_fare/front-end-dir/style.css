@@ -22,12 +22,17 @@
 }
 
 #fare {
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 0px;
   position:absolute;
   background-color:royalblue;
   color: white;
   font-family: sans-serif;
+  width: 150px;
+  border-top-left-radius: 20px;
+  padding-left: 50px;
+  height: 100px;
+  font-size: 25pt;
 }
 
 .d-none {

@@ -14,6 +14,7 @@ metadata:
       rewrite ^(/hp)$ $1/ redirect;
       rewrite ^(/rain-in-australia)$ $1/ redirect;
       rewrite ^(/titanic)$ $1/ redirect;
+      rewrite ^(/taxifare)$ $1/ redirect;
 spec:
   tls:
   - hosts:
@@ -45,6 +46,20 @@ spec:
             name: titanic
             port:
               number: 80
+      - path: /taxifare(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: taxifare
+            port:
+              number: 80
+      - path: /taxifareapi(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: taxifare
+            port:
+              number: 81
   - host: www.moqku.co
     http:
       paths:
@@ -69,3 +84,17 @@ spec:
             name: titanic
             port:
               number: 80
+      - path: /taxifare(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: taxifare
+            port:
+              number: 80
+      - path: /taxifareapi(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: taxifare
+            port:
+              number: 81
