@@ -1,22 +1,35 @@
-#search {
-  z-index: 1;
+.flatpickr-input {
+  font-family: sans-serif;
+  width: 295px;
 }
 
-.algolia-places {
-  width: auto;
+#passenger_count, #get-fare-button {
+  font-family: sans-serif;
+  width: 300px;
+  margin-top:10px;
 }
 
-#pickup_datetime {
-  background-color: white;
+#form-position {
+  position:absolute;
+  left:10px;
+  top:100px;
+  height:40px;
+  width: 295px;
+}
+
+#coord_orig_lat, #coord_orig_lon, #coord_destin_lat, #coord_destin_lon {
+  display:hidden;
 }
 
 #fare {
-  bottom: 0px;
-  right: 0px;
+  bottom: 10px;
+  right: 10px;
+  position:absolute;
+  background-color:royalblue;
+  color: white;
+  font-family: sans-serif;
 }
 
-#predicted-fare {
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
+.d-none {
+  display:hidden;
 }

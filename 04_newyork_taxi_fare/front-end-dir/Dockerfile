@@ -1,8 +1,6 @@
-FROM python:3.8.6-buster
-COPY api /api
-COPY NYCTaxiFare /NYCTaxiFare
-COPY requirements.txt /requirements.txt
-COPY models/model.joblib models/model.joblib
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
-CMD uvicorn api.fast:app --host 0.0.0.0 --port $PORT
+FROM nginx:latest
+
+#RUN ["mv", "/etc/nginx/conf.d/default.conf", "/etc/nginx/conf.d/BACKUP_default.conf"]
+#
+COPY index.html /usr/share/nginx/html/.
+COPY style.css /usr/share/nginx/html/.
