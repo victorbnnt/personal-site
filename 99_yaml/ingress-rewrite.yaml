@@ -25,13 +25,6 @@ spec:
   - host: moqku.co
     http:
       paths:
-      - path: /hp(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: homepage
-            port:
-              number: 80
       - path: /rain-in-australia(/|$)(.*)
         pathType: Prefix
         backend:
@@ -63,13 +56,6 @@ spec:
   - host: www.moqku.co
     http:
       paths:
-      - path: /hp(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: homepage
-            port:
-              number: 80
       - path: /rain-in-australia(/|$)(.*)
         pathType: Prefix
         backend:
