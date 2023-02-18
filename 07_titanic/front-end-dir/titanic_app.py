@@ -3,6 +3,18 @@ import requests
 import os
 from PIL import Image
 
+favicon_path = os.path.dirname(os.path.abspath(__file__)) + "/images/favicon.png"
+fav = Image.open(favicon_path)
+
+st.set_page_config(page_title='Titanic',
+                   page_icon=fav,
+                   layout="centered",
+                   initial_sidebar_state="auto",
+                   menu_items={'Get Help': None,
+                               'Report a bug': None,
+                               'About': "# Titanic survivor"
+                               })
+
 image_path = os.path.dirname(os.path.abspath(__file__)) + "/images/titanic_sinking.jpeg"
 
 image = Image.open(image_path)
