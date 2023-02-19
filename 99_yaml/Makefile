@@ -10,6 +10,9 @@ replace_titanic:
 replace_raininaustralia:
 	kubectl replace -f 06_rainInAustralia.yaml --force
 
+replace_savings:
+	kubectl replace -f 05_savings.yaml --force
+
 replace_ingresses:
 	kubectl replace -f ingress-jelly.yaml --force
 	kubectl replace -f ingress-rewrite.yaml --force
