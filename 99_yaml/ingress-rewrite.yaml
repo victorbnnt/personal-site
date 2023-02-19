@@ -15,6 +15,7 @@ metadata:
       rewrite ^(/rain-in-australia)$ $1/ redirect;
       rewrite ^(/titanic)$ $1/ redirect;
       rewrite ^(/taxifare)$ $1/ redirect;
+      rewrite ^(/savings)$ $1/ redirect;
 spec:
   tls:
   - hosts:
@@ -53,6 +54,13 @@ spec:
             name: taxifare
             port:
               number: 81
+      - path: /savings(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: savings
+            port:
+              number: 80
   - host: www.moqku.co
     http:
       paths:
@@ -84,3 +92,10 @@ spec:
             name: taxifare
             port:
               number: 81
+      - path: /savings(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: savings
+            port:
+              number: 80
