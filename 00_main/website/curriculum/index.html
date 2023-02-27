@@ -32,7 +32,21 @@
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
 								</header>
+                <script>
+                  window.onload = (event) => {
 
+                           function toggleCertifs() {
+                             var x = document.getElementById("certifs");
+                             if (x.style.display === "none") {
+                               x.style.display = "flex";
+                             } else {
+                               x.style.display = "none";
+                             }
+                           }
+
+                           document.getElementById('toggleCertifs').onclick=function() {toggleCertifs()}
+                  };
+                </script>
 							<!-- Banner -->
 							<!--	<section id="banner">
 									<div class="content">
@@ -101,9 +115,9 @@
               <!-- Section Certifications -->
                 <section>
                   <header class="major">
-                    <h2 style='font-variant:small-caps'>Certifications</h2>
+                    <h2  id="toggleCertifs" style='font-variant:small-caps'>⇅ - Certifications</h2>
                   </header>
-                  <div class="features">
+                  <div class="features" style="display:none" id="certifs">
                     <article>
                       <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
                         <li style='float:left; padding-left:0'><a style="margin:0" href="https://www.credly.com/badges/27d50f5b-c40c-46bf-889a-5d6232c532c1/public_url" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/hashicorp-terraform-certified.png" alt="" /></a></li>
@@ -122,6 +136,7 @@
                         <p><a style="margin:0; text-decoration:none" target="_blank" href="https://www.databricks.com/learn/certification/apache-spark-developer-associate">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://credentials.databricks.com/4c976a7d-fb88-4063-b19f-729d59804b0e#gs.r5dgvc">Verify me</a></p>
                       </div>
                     </article>
+
                     <article>
                       <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
                         <li style='float:left; padding-left:0'><a style="margin:0" href="https://credentials.databricks.com/c6b10504-4ad0-4f21-bef4-81abf4917851#gs.r5e20z" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/databricks-data-engineer-associate.png" alt="" /></a></li>
@@ -129,6 +144,16 @@
                       <div class="content">
                         <h3 style='margin:0'>Databricks Certified Data Engineer Associate</h3>
                         <p><a style="margin:0; text-decoration:none" target="_blank" href="https://www.databricks.com/learn/certification/data-engineer-associate">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://credentials.databricks.com/c6b10504-4ad0-4f21-bef4-81abf4917851#gs.r5e20z">Verify me</a></p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
+                        <li style='float:left; padding-left:0'><a style="margin:0" href="https://credentials.databricks.com/8f447751-835c-4fbd-bc2a-e7c693a2e851#gs.qpdyks" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/databricks-lakehouse-fundamentals.png" alt="" /></a></li>
+                      </ul>
+                      <div class="content">
+                        <h3 style='margin:0'>Databricks Lakehouse Fundamentals</h3>
+                        <p><a style="margin:0; text-decoration:none" target="_blank" href="https://www.databricks.com/learn/certification/lakehouse-platform-fundamentals">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://credentials.databricks.com/8f447751-835c-4fbd-bc2a-e7c693a2e851#gs.qpdyks">Verify me</a></p>
                       </div>
                     </article>
 
@@ -159,6 +184,56 @@
                       <div class="content">
                         <h3 style='margin:0'>CKA: Certified Kubernetes Administrator</h3>
                         <p><a style="margin:0; text-decoration:none" target="_blank" href="https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.26.pdf">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://www.credly.com/badges/0b5d94a4-79bd-41d2-aa0a-f8062ba06774">Verify me</a></p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
+                        <li style='float:left; padding-left:0'><a style="margin:0" href="https://www.credly.com/badges/12ee81dd-e8fb-4d2c-aeb4-0198cbf3b0b9" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/az104.png" alt="" /></a></li>
+                      </ul>
+                      <div class="content">
+                        <h3 style='margin:0'>AZ-104 - Azure Administrator Associate</h3>
+                        <p><a style="margin:0; text-decoration:none" target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/az-104/">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://www.credly.com/badges/12ee81dd-e8fb-4d2c-aeb4-0198cbf3b0b9">Verify me</a></p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
+                        <li style='float:left; padding-left:0'><a style="margin:0" href="https://www.credly.com/badges/2777b563-4feb-4127-aee0-f0c42769f1c2" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/dp203.png" alt="" /></a></li>
+                      </ul>
+                      <div class="content">
+                        <h3 style='margin:0'>DP-203 - Azure Data Engineer Associate</h3>
+                        <p><a style="margin:0; text-decoration:none" target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/dp-203">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://www.credly.com/badges/2777b563-4feb-4127-aee0-f0c42769f1c2">Verify me</a></p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
+                        <li style='float:left; padding-left:0'><a style="margin:0" href="https://www.credly.com/badges/9febf2b7-0a24-4de7-9e71-4346ef87f57b" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/dp900.png" alt="" /></a></li>
+                      </ul>
+                      <div class="content">
+                        <h3 style='margin:0'>DP-900 - Azure Data Fundamentals</h3>
+                        <p><a style="margin:0; text-decoration:none" target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/dp-900/">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://www.credly.com/badges/9febf2b7-0a24-4de7-9e71-4346ef87f57b">Verify me</a></p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
+                        <li style='float:left; padding-left:0'><a style="margin:0" href="https://www.credly.com/badges/df131b82-44d3-45d3-93f8-c5b2b4742d1b" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/az900.png" alt="" /></a></li>
+                      </ul>
+                      <div class="content">
+                        <h3 style='margin:0'>AZ-900 - Azure Fundamentals</h3>
+                        <p><a style="margin:0; text-decoration:none" target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/az-900/">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://www.credly.com/badges/df131b82-44d3-45d3-93f8-c5b2b4742d1b">Verify me</a></p>
+                      </div>
+                    </article>
+
+                    <article>
+                      <ul style='display:inline-block; list-style:none; margin:0; padding-left:0'>
+                        <li style='float:left; padding-left:0'><a style="margin:0" href="https://www.credly.com/badges/1d51cd27-510c-4029-9416-b3f73468fd5f/" target="_blank" class="image"><img style='height:80px; margin:5px' src="../images/pl900.png" alt="" /></a></li>
+                      </ul>
+                      <div class="content">
+                        <h3 style='margin:0'>PL-900 - Power Platform Fundamentals</h3>
+                        <p><a style="margin:0; text-decoration:none" target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/pl-900/">See more</a> / <a style="margin:0; text-decoration:none" target="_blank" href="https://www.credly.com/badges/1d51cd27-510c-4029-9416-b3f73468fd5f/">Verify me</a></p>
                       </div>
                     </article>
                   </div>
