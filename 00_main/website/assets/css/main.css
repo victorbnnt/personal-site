@@ -1609,10 +1609,10 @@ button,
   margin: 0 0 2em -3em;
   width: calc(100% + 3em); }
   .features article {
-    -moz-align-items: center;
-    -webkit-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
+    -moz-align-items: top; /*center;*/
+    -webkit-align-items: top; /*center;*/
+    -ms-align-items: top; /*center;*/
+    align-items: top; /*center;*/
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
