@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mainsite
-  namespace: ingress-nginx
+  namespace: main
   labels:
     webapp: moqku.co
   annotations:

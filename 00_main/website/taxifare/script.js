@@ -1,7 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoidmljdG9yYm5udCIsImEiOiJja29mams1Zm8wNmV5Mm9wbGtnZ21ybjVmIn0.xMyi36ZqeCDl4IKTQpIlCA';
-//const taxiFareApiUrl = 'https://moqku.co/taxifareapi/';
-//const taxiFareApiUrl = 'http://localhost:8900/';
-const taxiFareApiUrl = 'https://moqku.co/taxifare/';
+const taxiFareApiUrl = 'https://moqku.co/taxifare/predict_fare';
 
 const map = new mapboxgl.Map({
   container: 'map',

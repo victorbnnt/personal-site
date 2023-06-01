@@ -312,19 +312,6 @@ subjects:
 - kind: ServiceAccount
   name: controller
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config
-  namespace: metallb-system
-data:
-  config: |
-    address-pools:
-    - name: default
-      protocol: layer2
-      addresses:
-      - 192.168.1.155-192.168.10.255
----
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:

@@ -51,7 +51,7 @@ window.addEventListener('load', (event) => {
           })
           const querystring = query.join('&')
         console.log(querystring)
-          const url = `${taxiFareApiUrl}predict_fare?${querystring}`
+          const url = `${taxiFareApiUrl}?${querystring}`
           fetch(url, {
             method: 'GET',
             headers: {

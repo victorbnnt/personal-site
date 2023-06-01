@@ -37,9 +37,7 @@ purge_all:
 
 deploy_all:
 	kubectl apply -f config/required_namespaces.yaml --force
-	kubectl apply -f config/metalLb.yaml --force
 	kubectl apply -f config/nginx-ingress-controller.yaml --force
-	kubectl apply -f config/cluster-issuer.yaml --force
 	kubectl apply -f ingress-jelly.yaml --force
 	kubectl apply -f ingress-rewrite.yaml --force
 	kubectl apply -f 00_main.yaml --force
@@ -47,6 +45,10 @@ deploy_all:
 	kubectl apply -f 07_titanic.yaml --force
 	kubectl apply -f 06_rainInAustralia.yaml --force
 	kubectl apply -f 05_savings.yaml --force
+
+failing:
+	kubectl apply -f config/cluster-issuer.yaml --force
+	kubectl apply -f config/metalLb.yaml --force
 
 
 push_git:

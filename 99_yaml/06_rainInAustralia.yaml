@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: raininaustralia
-  namespace: ingress-nginx
+  namespace: main
   labels:
     webapp: moqku.co
 spec:
@@ -32,7 +32,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: raininaustralia
-  namespace: ingress-nginx
+  namespace: main
   labels:
     webapp: moqku.co
 spec:
