@@ -1778,3 +1778,13 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
   File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
 ModuleNotFoundError: No module named '04_newyork_taxi_fare/api-dir/api'
+pyenv: uvicorn: command not found
+
+The `uvicorn' command exists in these Python versions:
+  3.8.10/envs/taxifare
+  3.8.10/envs/titanic
+  taxifare
+  titanic
+
+Note: See 'pyenv help global' for tips on allowing both
+      python2 and python3 to be found.

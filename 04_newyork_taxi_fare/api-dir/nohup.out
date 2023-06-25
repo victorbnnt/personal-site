@@ -372,3 +372,7 @@ https://scikit-learn.org/stable/model_persistence.html#security-maintainability-
 INFO:     127.0.0.1:60944 - "GET /predict_fare?key=2012-10-06%2012:10:20.0000001&pickup_latitude=-74.047525&pickup_longitude=40.72159&dropoff_latitude=-74.047525&dropoff_longitude=40.72159&passenger_count=1&pickup_datetime=2023-05-30%2020:10:59%20UTC HTTP/1.0" 200 OK
 INFO:     127.0.0.1:58380 - "GET /predict_fare?key=2012-10-06%2012:10:20.0000001&pickup_latitude=-74.047455&pickup_longitude=40.721568&dropoff_latitude=-73.87071&dropoff_longitude=40.775069&passenger_count=1&pickup_datetime=2023-05-30%2020:12:44%20UTC HTTP/1.0" 200 OK
 INFO:     127.0.0.1:60020 - "GET /predict_fare?key=2012-10-06%2012:10:20.0000001&pickup_latitude=-74.047455&pickup_longitude=40.721568&dropoff_latitude=-73.87071&dropoff_longitude=40.775069&passenger_count=1&pickup_datetime=2023-05-30%2020:13:52%20UTC HTTP/1.0" 200 OK
+INFO:     Started server process [32527]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8900 (Press CTRL+C to quit)
