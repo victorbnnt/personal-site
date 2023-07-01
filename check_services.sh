@@ -22,7 +22,7 @@ output=$(ps aux | grep uvicorn | grep "8900")
 if [ -n "$output" ]; then
   echo "${GREEN}${CHECKMARK} Taxifare api is running ${NC}"
 else
-  echo "> ${RED}${CROSS} Taxifare api is not running${NC}"
+  echo "${RED}${CROSS} Taxifare api is not running${NC}"
 fi
 
 
