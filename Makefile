@@ -7,6 +7,8 @@ run_services:
 	@$(call green,"nohup uvicorn api.fast:app --port 8900")
 	@echo "\n✅ To start Savings, go to folder /home/victor/workplace/savings/ and execute the following command:"
 	@$(call green,"nohup streamlit run app.py --server.port 8901")
+	@echo "\n✅ To start Bluejay, follow this tutorial:"
+	@$(call green,"https://carpiero.medium.com/host-a-dashboard-using-python-dash-and-linux-in-your-own-linux-server-85d891e960bc")
 	@echo "######################################################################################"
 	@echo ""
 

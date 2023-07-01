@@ -25,6 +25,8 @@ else
   echo "> ${RED}${CROSS} Taxifare api is not running${NC}"
 fi
 
+
+
 # SAVINGS CHECK
 output=$(ps aux | grep streamlit | grep "8901")
 
@@ -33,4 +35,16 @@ if [ -n "$output" ]; then
   echo "${GREEN}${CHECKMARK} Savings is running${NC}"
 else
   echo "${RED}${CROSS} Savings is not running${NC}"
+fi
+
+
+
+# BLUEJAY CHECK
+output=$(ps aux | grep "uwsgi" | grep "bluejay")
+
+# Check if the output is empty
+if [ -n "$output" ]; then
+  echo "${GREEN}${CHECKMARK} Bluejay is running${NC}"
+else
+  echo "${RED}${CROSS} Bluejay is not running${NC}"
 fi
