@@ -2275,3 +2275,13 @@ button,
 #toggleCertifs:hover{
   cursor:pointer;
 }
+
+.code-snippet {
+  border-radius: 10px;
+  background-color: #ededed;
+  display: block;
+  padding: 15px;
+  font-family: monospace;
+  color: #474545;
+  font-size: smaller;
+}
