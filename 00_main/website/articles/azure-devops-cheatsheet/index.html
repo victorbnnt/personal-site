@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>moqku.co - GihHub cheat sheet</title>
+		<title>moqku.co - Azure devOps cheat sheet</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -23,7 +23,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>GitHub cheat sheet</strong></a>
+									<a href="index.html" class="logo"><strong>Azure devOps cheat sheet</strong></a>
 									<ul class="icons">
                     <li><a href="https://twitter.com/BnntVictor" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="https://www.instagram.com/victorbnnt/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -92,53 +92,67 @@
               <!-- Section Deep Learning-->
                 <section>
                   <header class="major">
-                    <h2>GitHub cheat sheet</h2>
+                    <h2>Azure devOps cheat sheet</h2>
                   </header>
 										<div style='width:100%;'>
-											<h4>Initialize local repository</h4>
-											<div class="code-snippet">
-												<span style='color:orangered'>mkdir</span> my-local-repository<br/>
-												<span style='color:orangered'>cd</span> my-local-repository<br/>
-												<span style='color:orangered'>git</span> init<br/>
-											</div>
-										</div>
-										<div style='width:100%; margin-top:45px'>
-											<h4>Link local repository to remote</h4>
-											<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
-											<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should not already exist</i></span><br/><br/>
+											<h4>Create service connection</h4>
 											<ul>
-												<li>Go to the remote repository in github.com</li>
-												<li>Click <b><>Code</b> button</li>
-												<li>In the <b>Local</b> tab / <b>SSH</b></li>
-												<li>Copy the url starting with <b>git@</b></li>
-												<div style="display:block;max-width:500px">
-											  <img style="width:100%;" src='../../images/screens/screen-remote-repo.png'/>
-											  </div>
-												<li>In the terminal, navigate to the local repository to be linked to the remote repository</li>
-												<li>Write the code</li>
+												<li>Go to portal.azure.com</li>
+												<li>Open cloud shell in bash</li>
+												<li>Type the following commands</li>
 											</ul>
 											<div class="code-snippet">
-												<span style='color:orangered'>git</span> remote add <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
+												subscriptionName=$(<span style='color:orangered'>az</span> account show --query name --output tsv)<br/>
+												subscriptionId=$(<span style='color:orangered'>az</span> account show --query id --output tsv)<br/>
 											</div>
-										</div>
-										<div style='width:100%; margin-top:45px'>
-											<h4>Replace local link to remote repository</h4>
-											<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
-											<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should already exist</i></span><br/><br/>
 											<ul>
-												<li>Go to the remote repository in github.com</li>
-												<li>Click <b><>Code</b> button</li>
-												<li>In the <b>Local</b> tab / <b>SSH</b></li>
-												<li>Copy the url starting with <b>git@</b></li>
-												<div style="display:block;max-width:500px">
-											  <img style="width:100%;" src='../../images/screens/screen-remote-repo.png'/>
-											  </div>
-												<li>In the terminal, navigate to the local repository to be linked to the remote repository</li>
-												<li>Write the code</li>
+												<li>Then create an Azure Active Directory Service Principal</li>
 											</ul>
 											<div class="code-snippet">
-												<span style='color:orangered'>git</span> remote set-url <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
+												<span style='color:orangered'>az</span> ad sp create-for-rbac --name <span>&#60;</span>service-principal-name<span>&#62;</span> --role contributor --scopes /subscriptions/$subscriptionId<br/>
 											</div>
+											<ul>
+												<li>The line above will output a JSON with 4 key-value pairs</li>
+												<li>Go to https://dev.azure.com/<span>&#60;</span>organization name<span>&#62;</span>/</li>
+												<li>Select a project</li>
+												<li>On the bottom left, click on <b>Project settings</b></li>
+												<li>In the menu on the left, click on <b>Pipelines<span>&#62;</span>Service connections</b></li>
+												<li>Click on <b>Create service connection</b> button</li>
+												<li>In the <b>New service connection</b> pane, select <b>Azure Resource Manager</b> and click <b>Next</b></li>
+												<li>For <b>Authentication method</b>, select <b>Service principal (manual)</b> and click <b>Next</b></li>
+												<li>Fill in the required parameters</li>
+											</ul>
+										  <ol>
+										    <li><b>Subscription Id</b></li>
+										    <span>Get it by typing the following command in Cloud shell in portal.azure.com</span>
+											<div class="code-snippet">
+												<span style='color:orangered'>echo</span> $subscriptionId<br/>
+											</div>
+										    <li><b>Subscription Name</b></li>
+										    <span>Get it by typing the following command in Cloud shell in portal.azure.com</span>
+											<div class="code-snippet">
+												<span style='color:orangered'>echo</span> $subscriptionName<br/>
+											</div>
+										    <li><b>Service Principal Id</b></li>
+										    <span>It is the value associated to the key <b>appId</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
+										    <li><b>Service principal key</b></li>
+										    <span>It is the value associated to the key <b>password</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
+										    <li><b>Tenant ID</b></li>
+										    <span>It is the value associated to the key <b>tenant</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
+										    <li><b>Service connection name</b></li>
+										    <span>A name for the Service connection</span>
+									    </ol>
+											<ul>
+												<li>Click the <b>Verify and save</b> button</li>
+											</ul>
+										</div>
+										<div style='width:100%; margin-top:45px'>
+											<h4>Generate Azure devOps projects from templates</h4>
+											<span>See <a href="https://azuredevopsdemogenerator.azurewebsites.net/" target="_blank" >this link</a>.</i></span><br/>
+										</div>
+										<div style='width:100%; margin-top:45px'>
+											<h4>Azure Pipelines Copy Files Task: Authentication Failed</h4>
+											<span>See how to fix <a href="https://brettmckenzie.net/posts/azure-pipelines-copy-files-task-authentication-failed/" target="_blank" >here</a>.</i></span><br/>
 										</div>
                 </section>
 
