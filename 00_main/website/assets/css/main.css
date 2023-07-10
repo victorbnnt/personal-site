@@ -2286,3 +2286,8 @@ button,
   font-size: smaller;
   margin-bottom:25px;
 }
+
+.code-comment {
+  color:#698B69;
+  font-style:italic;
+}

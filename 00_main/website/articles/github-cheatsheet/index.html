@@ -94,6 +94,12 @@
                   <header class="major">
                     <h2>GitHub cheat sheet</h2>
                   </header>
+									<ul class="actions">
+										<li><a href="https://moqku.co/articles/" class="button">Back</a></li>
+									</ul>
+
+
+
 										<div style='width:100%;'>
 											<h4>Initialize local repository</h4>
 											<div class="code-snippet">
@@ -102,6 +108,9 @@
 												<span style='color:orangered'>git</span> init<br/>
 											</div>
 										</div>
+
+
+
 										<div style='width:100%; margin-top:45px'>
 											<h4>Link local repository to remote</h4>
 											<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
@@ -121,6 +130,9 @@
 												<span style='color:orangered'>git</span> remote add <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
 											</div>
 										</div>
+
+
+
 										<div style='width:100%; margin-top:45px'>
 											<h4>Replace local link to remote repository</h4>
 											<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
@@ -140,6 +152,50 @@
 												<span style='color:orangered'>git</span> remote set-url <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
 											</div>
 										</div>
+
+
+
+										<div style='width:100%; margin-top:45px'>
+											<h4>Show links to remote repository</h4>
+											<ul>
+												<li>In the terminal, navigate to the local repository</li>
+												<li>Write the code</li>
+											</ul>
+											<div class="code-snippet">
+												<span style='color:orangered'>git</span> remote -v<br/>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px'>
+											<h4>Delete local repository link to GitHub</h4>
+											<ul>
+												<li>In the terminal, navigate to the local repository</li>
+												<li>Write the code</li>
+											</ul>
+											<div class="code-snippet">
+												<span style='color:orangered'>rm</span> -rf .git<br/>
+											</div>
+										</div>
+
+
+										<div style='width:100%; margin-top:45px'>
+											<h4>Basic commands</h4>
+											<ul>
+												<li>In the terminal, navigate to the local repository</li>
+												<li>Write the code</li>
+											</ul>
+											<div class="code-snippet">
+												<span style='color:orangered'>git</span> status    <span class='code-comment'># displays the state of the working directory and the staging area</span><br/>
+												<span style='color:orangered'>git</span> add --all <span class='code-comment'># adds a change in the working directory to the staging area. It tells Git that you want to include updates to all files in the next commit</span><br/>
+												<span style='color:orangered'>git</span> add <span>&#60;</span>filename<span>&#62;</span> <span class='code-comment'> # adds a change in the working directory to the staging area. It tells Git that you want to include updates to <span>&#60;</span>filename<span>&#62;</span> in the next commit</span><br/>
+												<span style='color:orangered'>git</span> commit -m '<span>&#60;</span>message<span>&#62;</span>' <span class='code-comment'># captures a snapshot of the project's currently staged changes</span><br/>
+												<span style='color:orangered'>git</span> log <span class='code-comment'># shows logs</span><br/>
+												<span style='color:orangered'>git</span> diff <span class='code-comment'># shows differences</span><br/>
+											</div>
+										</div>
+
                 </section>
 
 						</div>
@@ -173,8 +229,9 @@
                         <li><a href="#">Tempus Magna</a></li>
                         <li><a href="#">Feugiat Veroeros</a></li>
                       </ul>
-                    </li>--->
-                    <li><a style="background-color: #dcdcdc; border-radius: 5px; padding-left: 15px;" href="https://moqku.co/articles/">Articles</a></li>
+                    </li>
+                    <li><a style="background-color: #dcdcdc; border-radius: 5px; padding-left: 15px;" href="https://moqku.co/articles/">Articles</a></li>--->
+                    <li><a href="https://moqku.co/articles/">Articles</a></li>
                     <li><a href="https://moqku.co/curriculum/">About me</a></li>
 									</ul>
 								</nav>
