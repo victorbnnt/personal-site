@@ -32,6 +32,16 @@
                     <li><a href="https://www.kaggle.com/victorbnnt" target="_blank" class="icon brands "><img style='-webkit-filter:grayscale(100%);filter:grayscale(100%);width:16px' src='../../images/kaggle_logo_blue_512x512.svg'/></a></li>
 									</ul>
 								</header>
+                <script>
+                  window.onload = (event) => {
+
+													$('.item-parent').click(function() {
+													  $(this).children('.child').slideToggle();
+													  $(this).toggleClass('rotate-arrow');
+													})
+                  };
+                </script>
+
 
 							<!-- Banner -->
 							<!--	<section id="banner">
@@ -100,99 +110,111 @@
 
 
 
-										<div style='width:100%;'>
-											<h4>Initialize local repository</h4>
-											<div class="code-snippet">
-												<span style='color:orangered'>mkdir</span> my-local-repository<br/>
-												<span style='color:orangered'>cd</span> my-local-repository<br/>
-												<span style='color:orangered'>git</span> init<br/>
+										<div class="item-parent" style='width:100%;'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Initialize local repository <strong>&darr;</strong></h4>
+											<div class="child">
+												<div class="code-snippet">
+													<span style='color:orangered'>mkdir</span> my-local-repository<br/>
+													<span style='color:orangered'>cd</span> my-local-repository<br/>
+													<span style='color:orangered'>git</span> init<br/>
+												</div>
 											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4>Link local repository to remote</h4>
-											<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
-											<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should not already exist</i></span><br/><br/>
-											<ul>
-												<li>Go to the remote repository in github.com</li>
-												<li>Click <b><>Code</b> button</li>
-												<li>In the <b>Local</b> tab / <b>SSH</b></li>
-												<li>Copy the url starting with <b>git@</b></li>
-												<div style="display:block;max-width:500px">
-											  <img style="width:100%;" src='../../images/screens/screen-remote-repo.png'/>
-											  </div>
-												<li>In the terminal, navigate to the local repository to be linked to the remote repository</li>
-												<li>Write the code</li>
-											</ul>
-											<div class="code-snippet">
-												<span style='color:orangered'>git</span> remote add <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Link local repository to remote <strong>&darr;</strong></h4>
+											<div class="child">
+												<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
+												<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should not already exist</i></span><br/><br/>
+												<ul>
+													<li>Go to the remote repository in github.com</li>
+													<li>Click <b><>Code</b> button</li>
+													<li>In the <b>Local</b> tab / <b>SSH</b></li>
+													<li>Copy the url starting with <b>git@</b></li>
+													<div style="display:block;max-width:500px">
+												  <img style="width:100%;" src='../../images/screens/screen-remote-repo.png'/>
+												  </div>
+													<li>In the terminal, navigate to the local repository to be linked to the remote repository</li>
+													<li>Write the code</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>git</span> remote add <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
+												</div>
 											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4>Replace local link to remote repository</h4>
-											<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
-											<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should already exist</i></span><br/><br/>
-											<ul>
-												<li>Go to the remote repository in github.com</li>
-												<li>Click <b><>Code</b> button</li>
-												<li>In the <b>Local</b> tab / <b>SSH</b></li>
-												<li>Copy the url starting with <b>git@</b></li>
-												<div style="display:block;max-width:500px">
-											  <img style="width:100%;" src='../../images/screens/screen-remote-repo.png'/>
-											  </div>
-												<li>In the terminal, navigate to the local repository to be linked to the remote repository</li>
-												<li>Write the code</li>
-											</ul>
-											<div class="code-snippet">
-												<span style='color:orangered'>git</span> remote set-url <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Replace local link to remote repository <strong>&darr;</strong></h4>
+											<div class="child">
+												<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
+												<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should already exist</i></span><br/><br/>
+												<ul>
+													<li>Go to the remote repository in github.com</li>
+													<li>Click <b><>Code</b> button</li>
+													<li>In the <b>Local</b> tab / <b>SSH</b></li>
+													<li>Copy the url starting with <b>git@</b></li>
+													<div style="display:block;max-width:500px">
+												  <img style="width:100%;" src='../../images/screens/screen-remote-repo.png'/>
+												  </div>
+													<li>In the terminal, navigate to the local repository to be linked to the remote repository</li>
+													<li>Write the code</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>git</span> remote set-url <span>&#60;</span>local_name<span>&#62;</span> <span>&#60;</span>repository url<span>&#62;</span>.git<br/>
+												</div>
 											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4>Show links to remote repository</h4>
-											<ul>
-												<li>In the terminal, navigate to the local repository</li>
-												<li>Write the code</li>
-											</ul>
-											<div class="code-snippet">
-												<span style='color:orangered'>git</span> remote -v<br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Show links to remote repository <strong>&darr;</strong></h4>
+											<div class="child">
+												<ul>
+													<li>In the terminal, navigate to the local repository</li>
+													<li>Write the code</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>git</span> remote -v<br/>
+												</div>
 											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4>Delete local repository link to GitHub</h4>
-											<ul>
-												<li>In the terminal, navigate to the local repository</li>
-												<li>Write the code</li>
-											</ul>
-											<div class="code-snippet">
-												<span style='color:orangered'>rm</span> -rf .git<br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Delete local repository link to GitHub <strong>&darr;</strong></h4>
+											<div class="child">
+												<ul>
+													<li>In the terminal, navigate to the local repository</li>
+													<li>Write the code</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>rm</span> -rf .git<br/>
+												</div>
 											</div>
 										</div>
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4>Basic commands</h4>
-											<ul>
-												<li>In the terminal, navigate to the local repository</li>
-												<li>Write the code</li>
-											</ul>
-											<div class="code-snippet">
-												<span style='color:orangered'>git</span> status    <span class='code-comment'># displays the state of the working directory and the staging area</span><br/>
-												<span style='color:orangered'>git</span> add --all <span class='code-comment'># adds a change in the working directory to the staging area. It tells Git that you want to include updates to all files in the next commit</span><br/>
-												<span style='color:orangered'>git</span> add <span>&#60;</span>filename<span>&#62;</span> <span class='code-comment'> # adds a change in the working directory to the staging area. It tells Git that you want to include updates to <span>&#60;</span>filename<span>&#62;</span> in the next commit</span><br/>
-												<span style='color:orangered'>git</span> commit -m '<span>&#60;</span>message<span>&#62;</span>' <span class='code-comment'># captures a snapshot of the project's currently staged changes</span><br/>
-												<span style='color:orangered'>git</span> log <span class='code-comment'># shows logs</span><br/>
-												<span style='color:orangered'>git</span> diff <span class='code-comment'># shows differences</span><br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Basic commands <strong>&darr;</strong></h4>
+											<div class="child">
+												<ul>
+													<li>In the terminal, navigate to the local repository</li>
+													<li>Write the code</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>git</span> status    <span class='code-comment'># displays the state of the working directory and the staging area</span><br/>
+													<span style='color:orangered'>git</span> add --all <span class='code-comment'># adds a change in the working directory to the staging area. It tells Git that you want to include updates to all files in the next commit</span><br/>
+													<span style='color:orangered'>git</span> add <span>&#60;</span>filename<span>&#62;</span> <span class='code-comment'> # adds a change in the working directory to the staging area. It tells Git that you want to include updates to <span>&#60;</span>filename<span>&#62;</span> in the next commit</span><br/>
+													<span style='color:orangered'>git</span> commit -m '<span>&#60;</span>message<span>&#62;</span>' <span class='code-comment'># captures a snapshot of the project's currently staged changes</span><br/>
+													<span style='color:orangered'>git</span> log <span class='code-comment'># shows logs</span><br/>
+													<span style='color:orangered'>git</span> diff <span class='code-comment'># shows differences</span><br/>
+												</div>
 											</div>
 										</div>
 

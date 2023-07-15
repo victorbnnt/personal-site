@@ -32,6 +32,15 @@
                     <li><a href="https://www.kaggle.com/victorbnnt" target="_blank" class="icon brands "><img style='-webkit-filter:grayscale(100%);filter:grayscale(100%);width:16px' src='../../images/kaggle_logo_blue_512x512.svg'/></a></li>
 									</ul>
 								</header>
+                <script>
+                  window.onload = (event) => {
+
+													$('.item-parent').click(function() {
+													  $(this).children('.child').slideToggle();
+													  $(this).toggleClass('rotate-arrow');
+													})
+                  };
+                </script>
 
 
 
@@ -46,95 +55,236 @@
 
 
 
-										<div style='width:100%;'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create service connection</h4>
-											<ul>
-												<li>Go to portal.azure.com</li>
-												<li>Open cloud shell in bash</li>
-												<li>Type the following commands</li>
-											</ul>
-											<div class="code-snippet">
-												subscriptionName=$(<span style='color:orangered'>az</span> account show --query name --output tsv)<br/>
-												subscriptionId=$(<span style='color:orangered'>az</span> account show --query id --output tsv)<br/>
+										<div class="item-parent" style='width:100%;'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create service connection <strong>&darr;</strong></h4>
+											<div class="child">
+												<ul>
+													<li>Go to portal.azure.com</li>
+													<li>Open cloud shell in bash</li>
+													<li>Type the following commands</li>
+												</ul>
+												<div class="code-snippet">
+													subscriptionName=$(<span style='color:orangered'>az</span> account show --query name --output tsv)<br/>
+													subscriptionId=$(<span style='color:orangered'>az</span> account show --query id --output tsv)<br/>
+												</div>
+												<ul>
+													<li>Then create an Azure Active Directory Service Principal</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>az</span> ad sp create-for-rbac --name <span>&#60;</span>service-principal-name<span>&#62;</span> --role contributor --scopes /subscriptions/$subscriptionId<br/>
+												</div>
+												<ul>
+													<li>The line above will output a JSON with 4 key-value pairs</li>
+													<li>Go to https://dev.azure.com/<span>&#60;</span>organization name<span>&#62;</span>/</li>
+													<li>Select a project</li>
+													<li>On the bottom left, click on <b>Project settings</b></li>
+													<li>In the menu on the left, click on <b>Pipelines<span>&#62;</span>Service connections</b></li>
+													<li>Click on <b>Create service connection</b> button</li>
+													<li>In the <b>New service connection</b> pane, select <b>Azure Resource Manager</b> and click <b>Next</b></li>
+													<li>For <b>Authentication method</b>, select <b>Service principal (manual)</b> and click <b>Next</b></li>
+													<li>Fill in the required parameters</li>
+												</ul>
+											  <ol>
+											    <li><b>Subscription Id</b></li>
+											    <span>Get it by typing the following command in Cloud shell in portal.azure.com</span>
+												<div class="code-snippet">
+													<span style='color:orangered'>echo</span> $subscriptionId<br/>
+												</div>
+											    <li><b>Subscription Name</b></li>
+											    <span>Get it by typing the following command in Cloud shell in portal.azure.com</span>
+												<div class="code-snippet">
+													<span style='color:orangered'>echo</span> $subscriptionName<br/>
+												</div>
+											    <li><b>Service Principal Id</b></li>
+											    <span>It is the value associated to the key <b>appId</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
+											    <li><b>Service principal key</b></li>
+											    <span>It is the value associated to the key <b>password</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
+											    <li><b>Tenant ID</b></li>
+											    <span>It is the value associated to the key <b>tenant</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
+											    <li><b>Service connection name</b></li>
+											    <span>A name for the Service connection</span>
+										    </ol>
+												<ul>
+													<li>Click the <b>Verify and save</b> button</li>
+												</ul>
 											</div>
-											<ul>
-												<li>Then create an Azure Active Directory Service Principal</li>
-											</ul>
-											<div class="code-snippet">
-												<span style='color:orangered'>az</span> ad sp create-for-rbac --name <span>&#60;</span>service-principal-name<span>&#62;</span> --role contributor --scopes /subscriptions/$subscriptionId<br/>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Generate Azure devOps projects from templates <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://azuredevopsdemogenerator.azurewebsites.net/" target="_blank" >this link</a>.</i></span><br/>
 											</div>
-											<ul>
-												<li>The line above will output a JSON with 4 key-value pairs</li>
-												<li>Go to https://dev.azure.com/<span>&#60;</span>organization name<span>&#62;</span>/</li>
-												<li>Select a project</li>
-												<li>On the bottom left, click on <b>Project settings</b></li>
-												<li>In the menu on the left, click on <b>Pipelines<span>&#62;</span>Service connections</b></li>
-												<li>Click on <b>Create service connection</b> button</li>
-												<li>In the <b>New service connection</b> pane, select <b>Azure Resource Manager</b> and click <b>Next</b></li>
-												<li>For <b>Authentication method</b>, select <b>Service principal (manual)</b> and click <b>Next</b></li>
-												<li>Fill in the required parameters</li>
-											</ul>
-										  <ol>
-										    <li><b>Subscription Id</b></li>
-										    <span>Get it by typing the following command in Cloud shell in portal.azure.com</span>
-											<div class="code-snippet">
-												<span style='color:orangered'>echo</span> $subscriptionId<br/>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Azure Pipelines Copy Files Task: Authentication Failed <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See how to fix <a href="https://brettmckenzie.net/posts/azure-pipelines-copy-files-task-authentication-failed/" target="_blank" >here</a>.</i></span><br/>
 											</div>
-										    <li><b>Subscription Name</b></li>
-										    <span>Get it by typing the following command in Cloud shell in portal.azure.com</span>
-											<div class="code-snippet">
-												<span style='color:orangered'>echo</span> $subscriptionName<br/>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create and manage task groups <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/3-exercise-create-manage-task-groups" target="_blank" >here</a> the basics.</i></span><br/>
 											</div>
-										    <li><b>Service Principal Id</b></li>
-										    <span>It is the value associated to the key <b>appId</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
-										    <li><b>Service principal key</b></li>
-										    <span>It is the value associated to the key <b>password</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
-										    <li><b>Tenant ID</b></li>
-										    <span>It is the value associated to the key <b>tenant</b> of the JSON output of the <b>az ad sp create-for-rbac</b> command executed previously</span>
-										    <li><b>Service connection name</b></li>
-										    <span>A name for the Service connection</span>
-									    </ol>
-											<ul>
-												<li>Click the <b>Verify and save</b> button</li>
-											</ul>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Generate Azure devOps projects from templates</h4>
-											<span>See <a href="https://azuredevopsdemogenerator.azurewebsites.net/" target="_blank" >this link</a>.</i></span><br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create and manage variable groups <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/6-exercise-create-manage-variable-groups" target="_blank" >here</a> the basics.</i></span><br/>
+											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Azure Pipelines Copy Files Task: Authentication Failed</h4>
-											<span>See how to fix <a href="https://brettmckenzie.net/posts/azure-pipelines-copy-files-task-authentication-failed/" target="_blank" >here</a>.</i></span><br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up service hooks to monitor the pipeline <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/automate-inspection-health/5-exercise-set-up-service-hooks-to-monitor-pipeline" target="_blank" >here</a> the basics.</i></span><br/>
+											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create and manage task groups</h4>
-											<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/3-exercise-create-manage-task-groups" target="_blank" >here</a> the basics.</i></span><br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up a blue-green deployment <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/implement-blue-green-deployment-feature-toggles/4-exercise-set-up-blue-green-deployment" target="_blank" >here</a> the basics.</i></span><br/>
+											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create and manage variable groups</h4>
-											<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/6-exercise-create-manage-variable-groups" target="_blank" >here</a> the basics.</i></span><br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up a Ring-based deployment <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/implement-test-progressive-exposure-deployment/4-exercise-ring-based-deployment" target="_blank" >here</a> the basics.</i></span><br/>
+											</div>
 										</div>
 
 
 
-										<div style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up service hooks to monitor the pipeline</h4>
-											<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/automate-inspection-health/5-exercise-set-up-service-hooks-to-monitor-pipeline" target="_blank" >here</a> the basics.</i></span><br/>
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Integrating Azure Key Vault with Azure DevOps <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L10_Integrating_Azure_Key_Vault_with_Azure_DevOps.html" target="_blank" >here</a> the basics.</i></span><br/>
+											</div>
 										</div>
 
 
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Enable Dynamic Configuration and Feature Flags <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L11_Enable_Dynamic_Configuration_and_Feature_Flags.html" target="_blank" >here</a> the basics.</i></span><br/>
+											</div>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Basic structure of ARM templates <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/create-azure-resources-using-azure-resource-manager-templates/3-explore-template-components" target="_blank" >here</a>.</i></span><br/>
+											</div>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Deploy an Azure Key Vault and secret using Azure CLI <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>Here are the commands to achieve this:</span><br/>
+												<ul>
+													<li>Define some variables</li>
+												</ul>
+												<div class="code-snippet">
+													keyVaultName=<span>&#60;</span>keyvault-name<span>&#62;</span><br/>
+													resourceGroupName=<span>&#60;</span>ressource-group-name<span>&#62;</span><br/>
+													location=<span>&#60;</span>location<span>&#62;</span><br/>
+													userPrincipalName=<span>&#60;</span>user-principal-name<span>&#62;</span><br/>
+												</div>
+												<ul>
+													<li>Create a resource group</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>az</span> group create --name $resourceGroupName --location $location<br/>
+												</div>
+												<ul>
+													<li>Create a Key Vault</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>az</span> keyvault create --name $keyVaultName --resource-group $resourceGroupName --location $location --enabled-for-template-deployment true<br/>
+												</div>
+												<ul>
+													<li>Set some policies for the Key Vault</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>az</span> keyvault set-policy --upn $userPrincipalName --name $keyVaultName --secret-permissions set delete get list<br/>
+												</div>
+												<ul>
+													<li>Create a secret with the name, password</li>
+												</ul>
+												<div class="code-snippet">
+													password=$(openssl rand -base64 32)<br/>
+													#<br/>
+													<span style='color:orangered'>az</span> keyvault secret set --vault-name $keyVaultName --name 'password' --value $password<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Integrate AKV secrets in ARM templates <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/create-azure-resources-using-azure-resource-manager-templates/6-manage-secrets-templates" target="_blank" >here</a>.</i></span><br/>
+											</div>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Deployments using Azure Bicep templates <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M06_L12_Azure_Deployments_Using_Resource_Manager_Templates.html" target="_blank" >here</a>.</i></span><br/>
+											</div>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Basics of Azure automation workflows <strong>&darr;</strong></h4>
+											<div class="child">
+												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/explore-azure-automation-devops/9-create-workflow" target="_blank" >here</a>.</i></span><br/>
+											</div>
+										</div>
+
+
+
+										<div class="item-parent" style='width:100%; margin-top:45px'>
+											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Format outputs from Azure CLI commands <strong>&darr;</strong></h4>
+											<div class="child">
+												<ul>
+													<li>This command:</li>
+												</ul>
+												<div class="code-snippet">
+													<span style='color:orangered'>az</span> group list --output table<br/>
+												</div>
+												Or see <a href="https://jmespath.org/" target="_blank" >here</a>.
+											</div>
+										</div>
 
                 </section>
 

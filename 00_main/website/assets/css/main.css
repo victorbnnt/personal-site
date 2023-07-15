@@ -2291,3 +2291,21 @@ button,
   color:#698B69;
   font-style:italic;
 }
+
+.child {
+  display:none;
+}
+
+.item-parent h4 {
+  cursor:pointer;
+}
+
+strong {
+  font-size:15pt;
+  margin-left: 0.5em;
+  display: inline-block;
+  transition: .3s;
+}
+.rotate-arrow strong {
+  transform: rotate(180deg); 
+}
