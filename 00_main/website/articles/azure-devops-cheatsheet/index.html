@@ -36,8 +36,8 @@
                   window.onload = (event) => {
 
 													$('.item-parent').click(function() {
-													  $(this).children('.child').slideToggle();
-													  $(this).toggleClass('rotate-arrow');
+													  $(this).next('.child').slideToggle();
+													  $(this).toggleClass('selected-art');
 													})
                   };
                 </script>
@@ -55,8 +55,23 @@
 
 
 
-										<div class="item-parent" style='width:100%;'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create service connection <strong>&darr;</strong></h4>
+										<div style='width:100%; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Learning path AZ-400</h4></div>
+                      </div>
+											<div class="child">
+												See <a href="https://learn.microsoft.com/en-us/certifications/exams/az-400/" target="_blank" >here</a>.
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Create service connection</h4></div>
+                      </div>
 											<div class="child">
 												<ul>
 													<li>Go to portal.azure.com</li>
@@ -112,8 +127,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Generate Azure devOps projects from templates <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Generate Azure devOps projects from templates</h4></div>
+                      </div>
 											<div class="child">
 												<span>See <a href="https://azuredevopsdemogenerator.azurewebsites.net/" target="_blank" >this link</a>.</i></span><br/>
 											</div>
@@ -121,8 +139,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Azure Pipelines Copy Files Task: Authentication Failed <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Azure Pipelines Copy Files Task: Authentication Failed</h4></div>
+                      </div>
 											<div class="child">
 												<span>See how to fix <a href="https://brettmckenzie.net/posts/azure-pipelines-copy-files-task-authentication-failed/" target="_blank" >here</a>.</i></span><br/>
 											</div>
@@ -130,80 +151,90 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create and manage task groups <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Labs and exercises from AZ-400 learning path</h4></div>
+                      </div>
 											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/3-exercise-create-manage-task-groups" target="_blank" >here</a> the basics.</i></span><br/>
+											  <ol>
+											    <li><b>Labs</b></li>
+											    <ul>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.html" target="_blank">Agile Planning and Portfolio Management with Azure Boards</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.html" target="_blank">Version Controlling with Git in Azure Repos</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M03_L03_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.html" target="_blank">Configuring Agent Pools and Understanding Pipeline Styles</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M03_L04_Enabling_Continuous_Integration_with_Azure_Pipelines.html" target="_blank">Enabling Continuous Integration with Azure Pipelines</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M03_L05_Implementing_GitHub_Actions_for_CI_CD.html" target="_blank">Implementing GitHub actions for CI/CD</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M03_L06_Deploying_Docker_containers_to_Azure_App_Service_web_apps.html" target="_blank">Deploying Docker containers to Azure App Service web apps</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M04_L07_Controlling_Deployments_using_Release_Gates.html" target="_blank">Controlling Deployments using Classic Release Gates</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L08_Configuring_Pipelines_as_Code_with_YAML.html" target="_blank">Configuring Pipelines as Code with YAML</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L09_Setting_Up_and_Running_Functional_Tests.html" target="_blank">Setting Up and Running Functional Tests</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L10_Integrating_Azure_Key_Vault_with_Azure_DevOps.html" target="_blank">Integrating Azure Key Vault with Azure DevOps</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L11_Enable_Dynamic_Configuration_and_Feature_Flags.html" target="_blank">Enable Dynamic Configuration and Feature Flags</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M06_L12_Azure_Deployments_Using_Resource_Manager_Templates.html" target="_blank">Deployments using Azure Bicep templates</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M07_L13_Implement_Security_and_Compliance_in_an_Azure_Pipeline.html" target="_blank">Implement Security and Compliance in an Azure DevOps pipeline</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M07_L14_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.html" target="_blank">Managing technical debt with SonarCloud and Azure DevOps</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M08_L15_Package_Management_with_Azure_Artifacts.html" target="_blank">Package Management with Azure Artifacts</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M09_L16_Monitoring_Application_Performance_with_Application_Insights.html" target="_blank">Monitoring Application Performance with Application Insights</a></li>
+											    	<li><a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M09_L17_Sharing_Team_Knowledge_using_Azure_Project_Wikis.html" target="_blank">Sharing Team Knowledge using Azure Project Wikis</a></li>
+											    </ul>
+											    <li><b>Exercises</b></li>
+											    <ul>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/3-exercise-create-manage-task-groups" target="_blank">Create and manage task groups</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/6-exercise-create-manage-variable-groups" target="_blank">Create and manage variable groups</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/automate-inspection-health/5-exercise-set-up-service-hooks-to-monitor-pipeline" target="_blank">Set up service hooks to monitor the pipeline</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-us/training/modules/implement-blue-green-deployment-feature-toggles/4-exercise-set-up-blue-green-deployment" target="_blank">Set up a blue–green deployment</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-us/training/modules/implement-test-progressive-exposure-deployment/4-exercise-ring-based-deployment" target="_blank">Set up a Ring-based deployment</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-us/training/modules/create-azure-resources-using-azure-resource-manager-templates/6-manage-secrets-templates" target="_blank">Integrate AKV secrets in ARM templates</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/implement-bicep/4-exercise-create-bicep-templates" target="_blank">Create Bicep templates</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/explore-git-hooks/3-implement" target="_blank">Implement Git hooks</a></li>
+											    </ul>
+										    </ol>
 											</div>
 										</div>
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Create and manage variable groups <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Basics</h4></div>
+                      </div>
 											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-modularize-tasks-templates/6-exercise-create-manage-variable-groups" target="_blank" >here</a> the basics.</i></span><br/>
+                          <ul>
+											    	<li><a href="https://learn.microsoft.com/en-us/training/modules/create-azure-resources-using-azure-resource-manager-templates/3-explore-template-components" target="_blank">Basic structure of ARM templates</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/explore-azure-automation-devops/9-create-workflow" target="_blank">Basics of Azure automation workflows</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-us/training/modules/implement-desired-state-configuration-dsc/5-examine-dsc-configuration-file" target="_blank">Basics on DSC - Desired State Configuration</a></li>
+											    	<li><a href="https://learn.microsoft.com/en-gb/training/modules/integrate-azure-pipelines/2-describe-anatomy-of-pipeline" target="_blank">Anatomy of a pipeline</a></li>
+											    </ul>
 											</div>
 										</div>
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up service hooks to monitor the pipeline <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Packaging formats</h4></div>
+                      </div>
 											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/automate-inspection-health/5-exercise-set-up-service-hooks-to-monitor-pipeline" target="_blank" >here</a> the basics.</i></span><br/>
+                          <ul>
+											    	<li><a href="https://nuget.org/" target="_blank">NuGet Gallery</a> - NuGet</li><div style="text-align: justify; margin-top:5px; margin-bottom:15px">NuGet packages (pronounced "new get") are a standard used for .NET code artifacts. It includes .NET assemblies and related files, tooling, and sometimes only metadata. NuGet defines the way packages are created, stored, and consumed. A NuGet package is essentially a compressed folder structure with files in ZIP format and has the .nupkg extension.</div>
+											    	<li><a href="https://npmjs.org/" target="_blank">npmjs</a> - npm</li><div style="text-align: justify; margin-top:5px; margin-bottom:15px">npm package is used for JavaScript development. It originates from node.js development, where it's the default packaging format. An npm package is a file or folder containing JavaScript files and a package.json file describing the package's metadata. For node.js, the package usually includes one or more modules that can be loaded once the package is consumed.</div>
+											    	<li><a href="https://search.maven.org/" target="_blank">Maven</a> - Maven</li><div style="text-align: justify; margin-top:5px; margin-bottom:15px">Maven is used for Java-based projects. Each package has a Project Object Model file describing the project's metadata and is the basic unit for defining a package and working with it.</div>
+											    	<li><a href="https://pypi.org/" target="_blank">Python Package Index</a> - PyPi</li><div style="text-align: justify; margin-top:5px; margin-bottom:15px">PyPi The Python Package Index, abbreviated as PyPI and known as the Cheese Shop, is the official third-party software repository for Python.</div>
+											    	<li><a href="https://hub.docker.com/" target="_blank">Docker Hub</a> - Docker</li><div style="text-align: justify; margin-top:5px; margin-bottom:15px">Docker packages are called images and contain complete and self-contained deployments of components. A Docker image commonly represents a software component that can be hosted and executed by itself without any dependencies on other images. Docker images are layered and might be dependent on other images as their basis. Such images are referred to as base images.</div>
+											    </ul>
 											</div>
 										</div>
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up a blue-green deployment <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/implement-blue-green-deployment-feature-toggles/4-exercise-set-up-blue-green-deployment" target="_blank" >here</a> the basics.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Set up a Ring-based deployment <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/implement-test-progressive-exposure-deployment/4-exercise-ring-based-deployment" target="_blank" >here</a> the basics.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Integrating Azure Key Vault with Azure DevOps <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L10_Integrating_Azure_Key_Vault_with_Azure_DevOps.html" target="_blank" >here</a> the basics.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Enable Dynamic Configuration and Feature Flags <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M05_L11_Enable_Dynamic_Configuration_and_Feature_Flags.html" target="_blank" >here</a> the basics.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Basic structure of ARM templates <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/create-azure-resources-using-azure-resource-manager-templates/3-explore-template-components" target="_blank" >here</a>.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Deploy an Azure Key Vault and secret using Azure CLI <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Deploy an Azure Key Vault and secret using Azure CLI</h4></div>
+                      </div>
 											<div class="child">
 												<span>Here are the commands to achieve this:</span><br/>
 												<ul>
@@ -246,35 +277,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Integrate AKV secrets in ARM templates <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-us/training/modules/create-azure-resources-using-azure-resource-manager-templates/6-manage-secrets-templates" target="_blank" >here</a>.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Deployments using Azure Bicep templates <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://microsoftlearning.github.io/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/Instructions/Labs/AZ400_M06_L12_Azure_Deployments_Using_Resource_Manager_Templates.html" target="_blank" >here</a>.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Basics of Azure automation workflows <strong>&darr;</strong></h4>
-											<div class="child">
-												<span>See <a href="https://learn.microsoft.com/en-gb/training/modules/explore-azure-automation-devops/9-create-workflow" target="_blank" >here</a>.</i></span><br/>
-											</div>
-										</div>
-
-
-
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Format outputs from Azure CLI commands <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Format outputs from Azure CLI commands</h4></div>
+                      </div>
 											<div class="child">
 												<ul>
 													<li>This command:</li>
@@ -283,6 +290,18 @@
 													<span style='color:orangered'>az</span> group list --output table<br/>
 												</div>
 												Or see <a href="https://jmespath.org/" target="_blank" >here</a>.
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Markdown with Mermaid</h4></div>
+                      </div>
+											<div class="child">
+												See <a href="https://mermaid.js.org/" target="_blank" >here</a>.
 											</div>
 										</div>
 

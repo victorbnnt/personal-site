@@ -36,67 +36,11 @@
                   window.onload = (event) => {
 
 													$('.item-parent').click(function() {
-													  $(this).children('.child').slideToggle();
-													  $(this).toggleClass('rotate-arrow');
+													  $(this).next('.child').slideToggle();
+													  $(this).toggleClass('selected-art');
 													})
                   };
                 </script>
-
-
-							<!-- Banner -->
-							<!--	<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I’m Editorial<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="./images/pic10.jpg" alt="" />
-									</span>
-								</section>-->
-
-							<!-- Section
-								<section>
-									<header class="major">
-										<h2>Erat lacinia</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									</div>
-								</section> -->
 
 
               <!-- Section Deep Learning-->
@@ -110,8 +54,11 @@
 
 
 
-										<div class="item-parent" style='width:100%;'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Initialize local repository <strong>&darr;</strong></h4>
+										<div style='width:100%; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Initialize local repository</h4></div>
+                      </div>
 											<div class="child">
 												<div class="code-snippet">
 													<span style='color:orangered'>mkdir</span> my-local-repository<br/>
@@ -123,8 +70,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Link local repository to remote <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Link local repository to remote</h4></div>
+                      </div>
 											<div class="child">
 												<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
 												<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should not already exist</i></span><br/><br/>
@@ -147,8 +97,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Replace local link to remote repository <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Replace local link to remote repository</h4></div>
+                      </div>
 											<div class="child">
 												<span><i>Note that this method requires SSH authentication to be set. See <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh" target="_blank" >this good article</a>.</i></span><br/>
 												<span><i>Note that <span>&#60;</span>local_name<span>&#62;</span> used later should already exist</i></span><br/><br/>
@@ -171,8 +124,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Show links to remote repository <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Show links to remote repository</h4></div>
+                      </div>
 											<div class="child">
 												<ul>
 													<li>In the terminal, navigate to the local repository</li>
@@ -186,8 +142,11 @@
 
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Delete local repository link to GitHub <strong>&darr;</strong></h4>
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Delete local repository link to GitHub</h4></div>
+                      </div>
 											<div class="child">
 												<ul>
 													<li>In the terminal, navigate to the local repository</li>
@@ -200,21 +159,52 @@
 										</div>
 
 
-										<div class="item-parent" style='width:100%; margin-top:45px'>
-											<h4><img style="width:18px; margin-right:15px;" src="../../images/arrow.png" />Basic commands <strong>&darr;</strong></h4>
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Basic commands</h4></div>
+                      </div>
 											<div class="child">
 												<ul>
 													<li>In the terminal, navigate to the local repository</li>
 													<li>Write the code</li>
 												</ul>
 												<div class="code-snippet">
+													<span style='color:orangered'>gh</span> repo create <span class='code-comment'># to create a GitHub repository</span><br/>
 													<span style='color:orangered'>git</span> status    <span class='code-comment'># displays the state of the working directory and the staging area</span><br/>
 													<span style='color:orangered'>git</span> add --all <span class='code-comment'># adds a change in the working directory to the staging area. It tells Git that you want to include updates to all files in the next commit</span><br/>
 													<span style='color:orangered'>git</span> add <span>&#60;</span>filename<span>&#62;</span> <span class='code-comment'> # adds a change in the working directory to the staging area. It tells Git that you want to include updates to <span>&#60;</span>filename<span>&#62;</span> in the next commit</span><br/>
 													<span style='color:orangered'>git</span> commit -m '<span>&#60;</span>message<span>&#62;</span>' <span class='code-comment'># captures a snapshot of the project's currently staged changes</span><br/>
 													<span style='color:orangered'>git</span> log <span class='code-comment'># shows logs</span><br/>
 													<span style='color:orangered'>git</span> diff <span class='code-comment'># shows differences</span><br/>
+													<span style='color:orangered'>git</span> branch -d <span>&#60;</span>branch-name<span>&#62;</span><span class='code-comment'> # soft delete branch (will not work if everything as not been pushed)</span><br/>
+													<span style='color:orangered'>git</span> branch -D <span>&#60;</span>branch-name<span>&#62;</span><span class='code-comment'> # hard delete branch</span><br/>
 												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Deal with files that shouldn't have been commited</h4></div>
+                      </div>
+											<div class="child">
+												See <a href="https://learn.microsoft.com/en-gb/training/modules/manage-git-repositories/3-purge-repository-data" target="_blank" >here</a> two options.
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Forks basics</h4></div>
+                      </div>
+											<div class="child">
+												See <a href="https://learn.microsoft.com/en-gb/training/modules/plan-fostering-inner-source/4-describe-forks" target="_blank" >here</a>.
 											</div>
 										</div>
 

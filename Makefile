@@ -5,10 +5,11 @@ run_services:
 	@echo "######################################################################################"
 	@echo "\n✅ To start Taxifare api, go to folder /home/victorbonnet/workspace/personal-site/04_newyork_taxi_fare/api-dir/ and execute the following command:"
 	@$(call green,"nohup uvicorn api.fast:app --port 8900")
-	@echo "\n✅ To start Savings, go to folder /home/victor/workplace/savings/ and execute the following command:"
+	@echo "\n✅ To start Savings, go to folder /home/victorbonnet/workplace/savings/ and execute the following command:"
 	@$(call green,"nohup streamlit run app.py --server.port 8901")
 	@echo "\n✅ To start Bluejay, follow this tutorial:"
 	@$(call green,"https://carpiero.medium.com/host-a-dashboard-using-python-dash-and-linux-in-your-own-linux-server-85d891e960bc")
+	@$(call green,"Execute this command: sudo systemctl restart index.service")
 	@echo "######################################################################################"
 	@echo ""
 
