@@ -388,3 +388,213 @@ INFO:     Started server process [19336]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8900 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54606 - "GET /predict_fare?key=2012-10-06%2012:10:20.0000001&pickup_latitude=-73.97875&pickup_longitude=40.748157&dropoff_latitude=-73.986557&dropoff_longitude=40.718393&passenger_count=1&pickup_datetime=2023-09-14%2014:43:00%20UTC HTTP/1.0" 500 Internal Server Error
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator OneHotEncoder from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator Pipeline from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator MinMaxScaler from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator SVR from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator FunctionTransformer from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator RandomizedSearchCV from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 428, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/applications.py", line 284, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/routing.py", line 241, in app
+    raw_response = await run_endpoint_function(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/routing.py", line 169, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/anyio/to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "/home/victorbonnet/workspace/personal-site/04_newyork_taxi_fare/api-dir/api/fast.py", line 35, in predict_fare
+    y_pred = model.predict(X_pred)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/model_selection/_search.py", line 499, in predict
+    return self.best_estimator_.predict(X)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 480, in predict
+    Xt = transform.transform(Xt)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 658, in transform
+    Xt = transform.transform(Xt)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/compose/_column_transformer.py", line 800, in transform
+    Xs = self._fit_transform(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/compose/_column_transformer.py", line 658, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/parallel.py", line 63, in __call__
+    return super().__call__(iterable_with_config)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 1088, in __call__
+    while self.dispatch_one_batch(iterator):
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 901, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 819, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/_parallel_backends.py", line 208, in apply_async
+    result = ImmediateResult(func)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/_parallel_backends.py", line 597, in __init__
+    self.results = batch()
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 288, in __call__
+    return [func(*args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 288, in <listcomp>
+    return [func(*args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/parallel.py", line 123, in __call__
+    return self.function(*args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 876, in _transform_one
+    res = transformer.transform(X)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 658, in transform
+    Xt = transform.transform(Xt)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/preprocessing/_encoders.py", line 927, in transform
+    if self._drop_idx_after_grouping is not None:
+AttributeError: 'OneHotEncoder' object has no attribute '_drop_idx_after_grouping'
+INFO:     127.0.0.1:59356 - "GET /predict_fare?key=2012-10-06%2012:10:20.0000001&pickup_latitude=-73.97875&pickup_longitude=40.748157&dropoff_latitude=-73.986557&dropoff_longitude=40.718393&passenger_count=1&pickup_datetime=2023-09-14%2014:43:00%20UTC HTTP/1.0" 500 Internal Server Error
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator OneHotEncoder from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator Pipeline from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator ColumnTransformer from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator MinMaxScaler from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator SVR from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator FunctionTransformer from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator RandomizedSearchCV from version 1.2.0 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 428, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/applications.py", line 284, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/routing.py", line 241, in app
+    raw_response = await run_endpoint_function(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/fastapi/routing.py", line 169, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/anyio/to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+  File "/home/victorbonnet/workspace/personal-site/04_newyork_taxi_fare/api-dir/api/fast.py", line 35, in predict_fare
+    y_pred = model.predict(X_pred)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/model_selection/_search.py", line 499, in predict
+    return self.best_estimator_.predict(X)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 480, in predict
+    Xt = transform.transform(Xt)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 658, in transform
+    Xt = transform.transform(Xt)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/compose/_column_transformer.py", line 800, in transform
+    Xs = self._fit_transform(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/compose/_column_transformer.py", line 658, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/parallel.py", line 63, in __call__
+    return super().__call__(iterable_with_config)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 1088, in __call__
+    while self.dispatch_one_batch(iterator):
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 901, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 819, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/_parallel_backends.py", line 208, in apply_async
+    result = ImmediateResult(func)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/_parallel_backends.py", line 597, in __init__
+    self.results = batch()
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 288, in __call__
+    return [func(*args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/joblib/parallel.py", line 288, in <listcomp>
+    return [func(*args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/parallel.py", line 123, in __call__
+    return self.function(*args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 876, in _transform_one
+    res = transformer.transform(X)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/pipeline.py", line 658, in transform
+    Xt = transform.transform(Xt)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/utils/_set_output.py", line 140, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/victorbonnet/.pyenv/versions/3.8.10/envs/taxifare/lib/python3.8/site-packages/sklearn/preprocessing/_encoders.py", line 927, in transform
+    if self._drop_idx_after_grouping is not None:
+AttributeError: 'OneHotEncoder' object has no attribute '_drop_idx_after_grouping'

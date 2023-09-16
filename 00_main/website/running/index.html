@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>moqku.co - Running</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Running</strong></a>
+									<ul class="icons">
+                    <li><a href="https://twitter.com/BnntVictor" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.instagram.com/victorbnnt/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://medium.com/@victorbnnt" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    <li><a href="https://github.com/victorbnnt" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.kaggle.com/victorbnnt" target="_blank" class="icon brands "><img style='-webkit-filter:grayscale(100%);filter:grayscale(100%);width:16px' src='../images/kaggle_logo_blue_512x512.svg'/></a></li>
+									</ul>
+								</header>
+                <script>
+                  window.onload = (event) => {
+
+                           function convert_speed() {
+                           	  document.getElementById('speedkmh').innerHTML = Math.round(3600/(parseInt(document.getElementById('minutes').value)*60+parseInt(document.getElementById('seconds').value))*100)/100
+                           }
+
+                           document.getElementById('convert').onclick=function() {convert_speed()}
+                  };
+                </script>
+
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Speed conversion</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<p><b style="font-size: larger">Conversion mn/km to km/h</b></p>
+											<div style='display: flex;flex-wrap: wrap'>
+												<div><input type='text' id='minutes' value=5 style="height:40px; width:70px"></div>
+												<div style="margin-left:5px; margin-right:5px; height:40px;line-height:40px;">:</div>
+												<div><input type='text' id='seconds' value=17 style="height:40px; width:70px"></div>
+												<div style="margin-left:5px; margin-right:25px; height:40px;line-height:40px; width:50px;">mn/km</div>
+												<div><input id="convert" type='button' name='seconds' value="Convert" style="height:40px;"></div>
+											</div>
+											<div style="margin-top:20px;margin-bottom:10px">Is:</div>
+											<div style='display: flex;flex-wrap: wrap'>
+												<div id='speedkmh' style="border:1px solid lightgray; width:70px; border-radius: 5px;height:40px;line-height:40px; text-align: center;"></div>
+												<div style="margin-left:5px; margin-right:5px; height:40px;line-height:40px;">km/h</div>
+											</div>
+										</article>
+									</div>
+								</section>
+
+              <!-- Section -->
+                <section>
+                  <header class="major">
+                    <h2>N/A</h2>
+                  </header>
+									<div class="posts">
+									</div>
+                </section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="https://moqku.co/homepage/">Homepage</a></li>
+										<li><a href="https://moqku.co/apps/">Apps</a></li>
+                    <li><a href="https://moqku.co/notebooks/">Notebooks</a></li>
+                    <!--<li>
+                      <span class="opener">Submenu</span>
+                      <ul>
+                        <li><a href="#">Lorem Dolor</a></li>
+                        <li><a href="#">Ipsum Adipiscing</a></li>
+                        <li><a href="#">Tempus Magna</a></li>
+                        <li><a href="#">Feugiat Veroeros</a></li>
+                      </ul>
+                    </li>
+                    <li><a style="background-color: #dcdcdc; border-radius: 5px; padding-left: 15px;" href="https://moqku.co/articles/">Articles</a></li>--->
+                    <li><a href="https://moqku.co/articles/">Articles</a></li>
+                    <li><a href="https://moqku.co/curriculum/">About me</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="../images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Feel free to contact me, I will be pleased to answer any question.</p>
+									<ul class="contact">
+                    <li class="icon solid fa-envelope"><a href="#">victor.bonnet.mg@gmail.com</a></li>
+                    <li class="icon solid fa-phone">+33 6 74 26 57 46</li>
+                    <li class="icon solid fa-home">9 bis Rue Baliat<br />
+                                                   92400 Courbevoie, France</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+                  <p class="copyright">2022 - Victor Bonnet<br />Design: <a href="https://html5up.net">HTML5 UP</a></p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
