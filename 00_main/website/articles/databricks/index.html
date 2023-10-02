@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>moqku.co - Databricks</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Databricks notes</strong></a>
+									<ul class="icons">
+                    <li><a href="https://twitter.com/BnntVictor" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.instagram.com/victorbnnt/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://medium.com/@victorbnnt" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    <li><a href="https://github.com/victorbnnt" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.kaggle.com/victorbnnt" target="_blank" class="icon brands "><img style='-webkit-filter:grayscale(100%);filter:grayscale(100%);width:16px' src='../../images/kaggle_logo_blue_512x512.svg'/></a></li>
+									</ul>
+								</header>
+                <script>
+                  window.onload = (event) => {
+
+													$('.item-parent').click(function() {
+													  $(this).next('.child').slideToggle();
+													  $(this).toggleClass('selected-art');
+													})
+                  };
+                </script>
+
+
+              <!-- Section Deep Learning-->
+                <section>
+                  <header class="major">
+                    <h2>Databricks notes</h2>
+                  </header>
+									<ul class="actions">
+										<li><a href="https://moqku.co/articles/" class="button">Back</a></li>
+									</ul>
+
+
+
+										<div style='width:100%; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Read</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+													spark.read.csv(filepath, header="true", inferSchema="true", multiLine="true", escape='"')<br/><br/>
+													spark.read.format("delta").load(deltaTableName)<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Informative</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+													df.describe()<br/>
+													df.summary()<br/>
+													dbutils.data.summarize(df)<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Types</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+													df = df.withColumn("a", col("a").cast(DoubleType()))<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Train Test Split</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+													train_df, test_df = df.randomSplit([0.8, 0.2], seed=42)<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Imputer</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+												    <span style='color:orangered'>from pyspark.ml.feature import Imputer</span><br/><br/>
+												    <span style='color:darkgreen'># strategy in ["median", ...]</span><br/><br/>
+												    imputer = Imputer(strategy="median", inputCols=impute_cols, outputCols=impute_cols)<br/>
+												    imputer_model = imputer.fit(df)<br/>
+												    imputed_df = imputer_model.transform(df)<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Baseline model</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+												    <span style='color:orangered'>from pyspark.ml.evaluation import RegressionEvaluator</span><br/><br/>
+												    <span style='color:darkgreen'># metricName in ["rmse", "r2", ...]</span><br/><br/>
+												    avg_label = df.select(avg("label_column").alias("avg_label_column")).first()[0]<br/>
+												    med_label = df.select(median("label_column").alias("med_label_column")).first()[0]<br/><br/>
+												    pred_df = df.withColumn("avgPrediction", lit(avg_label))<br/>
+												    pred_df = df.withColumn("medPrediction", lit(med_label))<br/><br/>
+												    regressionMeanEvaluator = RegressionEvaluator(predictionCol="avgPrediction", labelCol="label_column", metricName="rmse")<br/>
+												    regressionMedianEvaluator = RegressionEvaluator(predictionCol="medPrediction", labelCol="label_column", metricName="rmse")<br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Simple Linear Regression model overview</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+												    <span style='color:orangered'>from pyspark.ml.regression import LinearRegression</span><br/>
+												    <span style='color:orangered'>from pyspark.ml.evaluation import RegressionEvaluator</span><br/>
+												    <span style='color:orangered'>from pyspark.ml.feature import VectorAssembler</span><br/><br/>
+												    <span style='color:darkgreen'># metricName in ["rmse", "r2", ...]</span><br/><br/>
+												    <span style='color:darkgreen'># Step 1: set the model</span><br/>
+												    vec_assembler = VectorAssembler(inputCols=["feature1", "feature2", "feature3", ...], outputCol="features")<br/>
+												    vec_train_df = vec_assembler.transform(train_df)<br/><br/>
+												    lr = LinearRegression(featuresCol="features", labelCol="label_column")<br/>
+												    lr_model = lr.fit(vec_train_df)<br/><br/>
+												    <span style='color:darkgreen'># Step 2: Apply to test set</span><br/>
+												    vec_test_df = vec_assembler.transform(test_df)<br/>
+												    pred_df = lr_model.transform(vec_test_df)<br/><br/>
+												    <span style='color:darkgreen'># Step 3: Evaluate the model</span><br/>
+												    regression_evaluator = RegressionEvaluator(predictionCol="prediction", labelCol="label_column", metricName="rmse")<br/>
+												    rmse = regression_evaluator.evaluate(pred_df)<br/><br/>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>Linear Regression model with Encoding and pipelines</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+												  <span style='color:orangered'>from pyspark.ml.feature import OneHotEncoder, StringIndexer</span><br/>
+												  <span style='color:orangered'>from pyspark.ml.feature import VectorAssembler</span><br/>
+												  <span style='color:orangered'>from pyspark.ml import Pipeline</span><br/>
+												  <span style='color:orangered'>from pyspark.ml.regression import LinearRegression</span><br/>
+												  <span style='color:orangered'>from pyspark.ml import PipelineModel</span><br/>
+												  <span style='color:orangered'>from pyspark.ml.evaluation import RegressionEvaluator</span><br/><br/>
+												  <span style='color:darkgreen'># "price" is the column to predict</span><br/><br/>
+												  <span style='color:darkgreen'># OneHotEncoder for categorical columns</span><br/>
+													categorical_cols = [field for (field, dataType) in train_df.dtypes if dataType == "string"]<br/>
+                          index_output_cols = [x + "Index" for x in categorical_cols]<br/>
+                          ohe_output_cols = [x + "OHE" for x in categorical_cols]<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+                          string_indexer = StringIndexer(inputCols=categorical_cols, outputCols=<b>index_output_cols</b>, handleInvalid="skip")<br/>
+                          ohe_encoder = OneHotEncoder(inputCols=<b>index_output_cols</b>, outputCols=ohe_output_cols)<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># Get numeric columns</span><br/>
+                          numeric_cols = [field for (field, dataType) in train_df.dtypes if ((dataType == "double") & (field != "price"))]<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># Assemble in vector assembler</span><br/>
+												  assembler_inputs = ohe_output_cols + numeric_cols<br/>
+                          vec_assembler = VectorAssembler(inputCols=assembler_inputs, outputCol="features")<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># Set model</span><br/>
+												  lr = LinearRegression(labelCol="price", featuresCol="features")<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># OPTIONAL: combine all above in a pipeline</span><br/>
+												  stages = [string_indexer, ohe_encoder, vec_assembler, lr]<br/>
+                          pipeline = Pipeline(stages=stages)<br/>
+                          pipeline_model = pipeline.fit(train_df)<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># OPTIONAL: write to persistent storage</span><br/>
+												  pipeline_model.write().overwrite().save(working_dir)<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># OPTIONAL: Load pipeline</span><br/>
+												  saved_pipeline_model = PipelineModel.load(working_dir)<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># Apply to predict</span><br/>
+												  pred_df = saved_pipeline_model.transform(test_df)<br/>
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># Evaluate</span><br/>
+												  regression_evaluator = RegressionEvaluator(predictionCol="prediction", labelCol="price", metricName="rmse")<br/>
+                          rmse = regression_evaluator.evaluate(pred_df)<br/>
+                          r2 = regression_evaluator.setMetricName("r2").evaluate(pred_df)<br/>
+												</div>
+											</div>
+										</div>
+
+                </section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="https://moqku.co/homepage/">Homepage</a></li>
+										<li><a href="https://moqku.co/apps/">Apps</a></li>
+                    <li><a href="https://moqku.co/notebooks/">Notebooks</a></li>
+                    <!--<li>
+                      <span class="opener">Submenu</span>
+                      <ul>
+                        <li><a href="#">Lorem Dolor</a></li>
+                        <li><a href="#">Ipsum Adipiscing</a></li>
+                        <li><a href="#">Tempus Magna</a></li>
+                        <li><a href="#">Feugiat Veroeros</a></li>
+                      </ul>
+                    </li>
+                    <li><a style="background-color: #dcdcdc; border-radius: 5px; padding-left: 15px;" href="https://moqku.co/articles/">Articles</a></li>--->
+                    <li><a href="https://moqku.co/articles/">Articles</a></li>
+                    <li><a href="https://moqku.co/curriculum/">About me</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="../../images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../../images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../../images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Feel free to contact me, I will be pleased to answer any question.</p>
+									<ul class="contact">
+                    <li class="icon solid fa-envelope"><a href="#">victor.bonnet.mg@gmail.com</a></li>
+                    <li class="icon solid fa-phone">+33 6 74 26 57 46</li>
+                    <li class="icon solid fa-home">9 bis Rue Baliat<br />
+                                                   92400 Courbevoie, France</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+                  <p class="copyright">2022 - Victor Bonnet<br />Design: <a href="https://html5up.net">HTML5 UP</a></p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
