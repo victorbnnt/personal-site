@@ -2,6 +2,7 @@
 .htpasswd
 .passwd
 .DS_Store
+notes.txt
 old-*
 06_rain_in_australia/api-dir/api/__pycache__
 06_rain_in_australia/api-dir/RainInAustralia/__pycache__
