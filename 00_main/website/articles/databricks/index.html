@@ -234,6 +234,29 @@
 											</div>
 										</div>
 
+
+
+										<div style='width:100%; margin-top:45px; color:black'>
+                      <div class='art-title item-parent'>
+                        <div class='art-icon'><img src="../../images/arrow.png" /></div>
+                        <div class='art-text'><h4>MLflow</h4></div>
+                      </div>
+											<div class="child">
+												<div class="code-snippet">
+												  <span style='color:darkgreen'>#</span><br/>
+												  <span style='color:darkgreen'># start MLflow session</span><br/>
+													with mlflow.start_run(run_name="LR-Single-Feature") as run:<br/>
+                          <span style='color:darkgreen;text-indent:15px;display:inline-block;'>#</span><br/>
+                          <span style='color:darkgreen;text-indent:15px;display:inline-block;'># Log parameters</span><br/>
+                          <span style='text-indent:15px;text-indent:15px;display:inline-block;'>mlflow.log_param("label", "price")<br/>
+                          <span style='text-indent:15px;text-indent:15px;display:inline-block;'>mlflow.log_param("features", "bedrooms")<br/>
+                          <span style='color:darkgreen;text-indent:15px;text-indent:15px;display:inline-block;'>#</span><br/>
+                          <span style='color:darkgreen;text-indent:15px;text-indent:15px;display:inline-block;'># Log model</span><br/>
+                          <span style='text-indent:15px;text-indent:15px;display:inline-block;'>mlflow.spark.log_model(pipeline_model, "model", input_example=train_df.limit(5).toPandas())</span><br/>
+												</div>
+											</div>
+										</div>
+
                 </section>
 
 						</div>
